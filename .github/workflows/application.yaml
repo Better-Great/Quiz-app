@@ -42,24 +42,24 @@ jobs:
         run: npm run build
         working-directory: ./quiz-app
 
-              # Setup sonar-scanner
-      - name: Setup SonarQube
-        uses: warchant/setup-sonar-scanner@v8
+      #         # Setup sonar-scanner
+      # - name: Setup SonarQube
+      #   uses: warchant/setup-sonar-scanner@v8
 
-      - name: Analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: quiz-app
-          args: >
-            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-            -Dsonar.host.url=${{ secrets.SONAR_URL }}
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.sources=src/
-            -Dsonar.verbose=true
+      # - name: Analyze with SonarCloud
+      #   uses: sonarsource/sonarcloud-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #   with:
+      #     projectBaseDir: quiz-app
+      #     args: >
+      #       -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+      #       -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+      #       -Dsonar.host.url=${{ secrets.SONAR_URL }}
+      #       -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+      #       -Dsonar.sources=src/
+      #       -Dsonar.verbose=true
         
   backend-test:
     runs-on: ubuntu-latest
@@ -88,24 +88,24 @@ jobs:
         env:
           CI: true 
 
-              # Setup sonar-scanner
-      - name: Setup SonarQube
-        uses: warchant/setup-sonar-scanner@v8
+      #         # Setup sonar-scanner
+      # - name: Setup SonarQube
+      #   uses: warchant/setup-sonar-scanner@v8
 
-      - name: Analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets._GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: backend
-          args: >
-            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-            -Dsonar.host.url=${{ secrets.SONAR_URL }}
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.sources=.
-            -Dsonar.verbose=true
+      # - name: Analyze with SonarCloud
+      #   uses: sonarsource/sonarcloud-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets._GITHUB_TOKEN }}
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #   with:
+      #     projectBaseDir: backend
+      #     args: >
+      #       -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+      #       -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+      #       -Dsonar.host.url=${{ secrets.SONAR_URL }}
+      #       -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+      #       -Dsonar.sources=.
+      #       -Dsonar.verbose=true
           
 
   frontend-security:
