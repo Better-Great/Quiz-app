@@ -87,6 +87,8 @@
 ## To Deploy The Infrastrcture
 Run the following commands to run the IAC
 
+
+
 ```
 terraform init
 terraform validate
