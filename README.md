@@ -82,16 +82,3 @@
      sudo yum install -y yum-utils
      sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
      sudo yum -y install terraform
-
-
-## To Deploy The Infrastrcture
-Run the following commands to run the IAC
-
-
-
-```
-terraform init
-terraform validate
-terraform plan
-terraform apply
-```
