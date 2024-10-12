@@ -1,6 +1,12 @@
 name: Quiz-App CI
 
 on:
+  push:
+    branches: "main"
+    paths:
+      - "quiz-app/**"
+      - "backend/**"
+      - ".github/workflows/application.yaml"
   pull_request:
     branches: "main"
 
